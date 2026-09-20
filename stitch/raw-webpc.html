@@ -1,0 +1,487 @@
+<!DOCTYPE html><html class="dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>Portfolio Shell</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "secondary-fixed": "#6ffbbe",
+        "tertiary-fixed-dim": "#cbc6c1",
+        "on-surface-variant": "#c4c7c8",
+        "surface-tint": "#c6c6c7",
+        "outline-variant": "#444748",
+        "surface-container-low": "#1c1b1d",
+        "outline": "#8e9192",
+        "on-primary-fixed-variant": "#454747",
+        "on-primary-container": "#636565",
+        "surface-variant": "#353437",
+        "tertiary-fixed": "#e7e1dd",
+        "on-surface": "#e5e1e4",
+        "on-tertiary-container": "#676460",
+        "surface-bright": "#39393b",
+        "on-secondary-fixed-variant": "#005236",
+        "surface-dim": "#131315",
+        "on-secondary-container": "#00311f",
+        "surface": "#131315",
+        "error-container": "#93000a",
+        "primary-fixed": "#e2e2e2",
+        "surface-container": "#201f22",
+        "surface-container-highest": "#353437",
+        "background": "#131315",
+        "secondary": "#4edea3",
+        "inverse-on-surface": "#313032",
+        "error": "#ffb4ab",
+        "on-primary": "#2f3131",
+        "on-error": "#690005",
+        "primary": "#ffffff",
+        "surface-container-high": "#2a2a2c",
+        "tertiary-container": "#e7e1dd",
+        "secondary-container": "#00a572",
+        "inverse-primary": "#5d5f5f",
+        "secondary-fixed-dim": "#4edea3",
+        "on-secondary": "#003824",
+        "on-primary-fixed": "#1a1c1c",
+        "on-secondary-fixed": "#002113",
+        "on-tertiary-fixed-variant": "#494643",
+        "tertiary": "#ffffff",
+        "surface-container-lowest": "#0e0e10",
+        "on-error-container": "#ffdad6",
+        "on-background": "#e5e1e4",
+        "primary-fixed-dim": "#c6c6c7",
+        "primary-container": "#e2e2e2",
+        "on-tertiary": "#32302d",
+        "inverse-surface": "#e5e1e4",
+        "on-tertiary-fixed": "#1d1b19"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.125rem",
+        "lg": "0.25rem",
+        "xl": "0.5rem",
+        "full": "0.75rem"
+      },
+      "spacing": {
+        "gutter": "1.5rem",
+        "gutter-mobile": "1rem",
+        "space-md": "1rem",
+        "margin-mobile": "1rem",
+        "margin": "2rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-xl": "2.5rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "headline-lg-mobile": [
+          "Geist"
+        ],
+        "body-md": [
+          "Geist"
+        ],
+        "headline-lg": [
+          "Geist"
+        ],
+        "label-tag": [
+          "Geist"
+        ],
+        "body-lg": [
+          "Geist"
+        ],
+        "label-code": [
+          "JetBrains Mono"
+        ],
+        "headline-md": [
+          "Geist"
+        ],
+        "display": [
+          "Geist"
+        ],
+        "display-mobile": [
+          "Geist"
+        ]
+      },
+      "fontSize": {
+        "headline-lg-mobile": [
+          "24px",
+          {
+            "lineHeight": "30px",
+            "letterSpacing": "-0.02em",
+            "fontWeight": "600"
+          }
+        ],
+        "body-md": [
+          "14px",
+          {
+            "lineHeight": "22px",
+            "letterSpacing": "-0.005em",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-lg": [
+          "30px",
+          {
+            "lineHeight": "36px",
+            "letterSpacing": "-0.025em",
+            "fontWeight": "600"
+          }
+        ],
+        "label-tag": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0.01em",
+            "fontWeight": "500"
+          }
+        ],
+        "body-lg": [
+          "16px",
+          {
+            "lineHeight": "26px",
+            "letterSpacing": "-0.01em",
+            "fontWeight": "400"
+          }
+        ],
+        "label-code": [
+          "12px",
+          {
+            "lineHeight": "16px",
+            "letterSpacing": "0em",
+            "fontWeight": "400"
+          }
+        ],
+        "headline-md": [
+          "20px",
+          {
+            "lineHeight": "28px",
+            "letterSpacing": "-0.015em",
+            "fontWeight": "500"
+          }
+        ],
+        "display": [
+          "48px",
+          {
+            "lineHeight": "52px",
+            "letterSpacing": "-0.03em",
+            "fontWeight": "600"
+          }
+        ],
+        "display-mobile": [
+          "32px",
+          {
+            "lineHeight": "36px",
+            "letterSpacing": "-0.025em",
+            "fontWeight": "600"
+          }
+        ]
+      }
+    }
+  }
+};</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen relative selection:bg-secondary-container selection:text-on-secondary"><div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_500px_at_50%_-100px,rgba(78,222,163,0.06),transparent_80%)]"></div><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant/40"><div class="h-16 max-w-5xl mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-sm group text-left" data-path="portfolio" href="#"><div class="w-7 h-7 rounded-lg bg-surface-container-high border border-outline-variant/60 flex items-center justify-center transition-colors group-hover:border-outline"><span class="material-symbols-outlined text-secondary text-[16px]">terminal</span></div><div class="flex items-center gap-space-xs"><span class="font-label-tag text-label-tag text-primary font-semibold tracking-tight">AL</span><span class="text-outline font-label-code text-label-code">/</span><span class="font-label-tag text-label-tag text-on-surface-variant group-hover:text-primary transition-colors hidden sm:inline">Alex Lin</span></div></a><div class="hidden md:flex items-center gap-space-xs pl-space-xs"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-code text-label-code text-on-surface-variant/80">Staff SWE</span></div></div><nav class="hidden md:flex items-center gap-space-xs p-space-xs bg-surface-container-low/60 rounded-xl border border-outline-variant/30" data-active-classes="bg-surface-container-high text-primary font-medium rounded-lg"><a class="px-space-sm py-1 font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-all" data-path="education" href="#education">Education</a><a class="px-space-sm py-1 font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-all" data-path="stack" href="#stack">Stack</a><a class="px-space-sm py-1 font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-all" data-path="projects" href="#projects">Projects</a><a class="px-space-sm py-1 font-body-md text-body-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded-lg transition-all" data-path="contact" href="#contact">Contact</a></nav><div class="flex items-center gap-space-xs"><a aria-label="GitHub Profile" class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://github.com" rel="noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">code</span></a><a aria-label="LinkedIn Profile" class="p-1.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" href="https://linkedin.com" rel="noreferrer" target="_blank"><span class="material-symbols-outlined text-[18px]">share</span></a><a class="hidden sm:inline-flex items-center gap-1.5 px-space-sm py-1 rounded-lg bg-surface-container-high border border-outline-variant hover:border-outline text-on-surface font-label-tag text-label-tag transition-all hover:text-primary" data-path="resume" href="#"><span class="material-symbols-outlined text-[14px]">description</span>Resume</a></div></div></header><main class="relative z-10 w-full pt-16 bg-background"><div class="max-w-5xl mx-auto px-margin py-space-xl"><div class="flex flex-col w-full text-on-surface">
+<!-- Top Ambient Glow -->
+<div class="relative w-full">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-72 bg-gradient-to-b from-secondary/10 to-transparent blur-3xl -z-10 pointer-events-none"></div>
+</div>
+<!-- HERO SECTION -->
+<section class="flex flex-col pt-4 pb-16 space-y-8">
+<!-- Availability Pill Badge -->
+<div class="flex items-center">
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1 rounded-full bg-surface-container-high border border-outline-variant/60 shadow-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+<span class="font-label-tag text-label-tag text-on-surface-variant tracking-tight">Available for internships &amp; full-time</span>
+<span class="text-outline font-label-code text-label-code">/</span>
+<span class="font-label-tag text-label-tag text-secondary font-medium">Software Engineer</span>
+</div>
+</div>
+<!-- Main Hero Typographic Lockup -->
+<div class="space-y-4 max-w-4xl">
+<h1 class="font-display text-display text-primary tracking-tight leading-[1.08] lg:text-[56px] lg:leading-[60px]">
+        Building scalable systems &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-on-surface-variant to-secondary">distributed architecture.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        CS student &amp; systems builder focused on high-throughput backend services, interactive real-time applications, and developer tooling with clean engineering principles.
+      </p>
+</div>
+<!-- Actions Row -->
+<div class="flex flex-wrap items-center gap-space-sm pt-2">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-medium hover:bg-surface-tint transition-all shadow-sm group" href="#projects">
+<span class="">View Selected Projects</span>
+<span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5">arrow_downward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-surface-container-high border border-outline-variant/70 text-on-surface font-body-md text-body-md font-medium hover:bg-surface-variant hover:text-primary transition-all" href="#contact">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">mail</span>
+<span class="">Get In Touch</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span class="font-label-code text-label-code">curl alexlin.dev/cv</span>
+</a>
+</div>
+<!-- Quick Stats Metric Band -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-8 border-t border-outline-variant/40"><div class="flex flex-col p-space-md rounded-lg bg-surface-container-low/70 border border-outline-variant/30"><div class="flex items-center justify-between text-outline mb-1"><span class="font-label-tag text-label-tag tracking-wider uppercase">STATUS</span><svg class="w-4 h-4" fill="none" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></div><span class="font-headline-lg text-headline-lg text-primary font-semibold">Undergraduate</span><span class="font-label-code text-label-code text-on-surface-variant/80 mt-0.5">B.S. in Computer Science</span></div><div class="flex flex-col p-space-md rounded-lg bg-surface-container-low/70 border border-outline-variant/30"><div class="flex items-center justify-between text-outline mb-1"><span class="font-label-tag text-label-tag tracking-wider uppercase">FOUNDATIONS</span><svg class="w-4 h-4" fill="none" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div><span class="font-headline-lg text-headline-lg text-primary font-semibold">Data Structures</span><span class="font-label-code text-label-code text-on-surface-variant/80 mt-0.5">Algorithms &amp; OOP Principles</span></div><div class="flex flex-col p-space-md rounded-lg bg-surface-container-low/70 border border-outline-variant/30"><div class="flex items-center justify-between text-outline mb-1"><span class="font-label-tag text-label-tag tracking-wider uppercase">CURRENT FOCUS</span><svg class="w-4 h-4" fill="none" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div><span class="font-headline-lg text-headline-lg text-primary font-semibold">Fullstack &amp; Systems</span><span class="font-label-code text-label-code text-on-surface-variant/80 mt-0.5">TypeScript, Next.js &amp; C#</span></div><div class="flex flex-col p-space-md rounded-lg bg-surface-container-low/70 border border-outline-variant/30"><div class="flex items-center justify-between text-outline mb-1"><span class="font-label-tag text-label-tag tracking-wider uppercase">TARGET ROLE</span><svg class="w-4 h-4" fill="none" stroke="#10B981" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div><span class="font-headline-lg text-headline-lg text-primary font-semibold">Software Intern</span><span class="font-label-code text-label-code text-on-surface-variant/80 mt-0.5">Open to work &amp; team collaboration</span></div></div>
+</section>
+<!-- SELECTED PROJECTS -->
+
+<!-- TECHNICAL SKILLS & STACK -->
+<section class="py-12 space-y-8" id="education"><div class="space-y-1"><div class="flex items-center gap-2"><span class="font-label-code text-label-code text-secondary tracking-widest uppercase">// BACKGROUND</span><span class="h-px w-8 bg-outline-variant/60"></span></div><h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">Education &amp; Journey</h2><p class="font-body-md text-body-md text-on-surface-variant">Academic foundations and hands-on systems research roles.</p></div><div class="relative pl-6 border-l border-outline-variant/40 space-y-10 ml-2"><div class="relative group"><span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-surface-container border-2 border-secondary group-hover:bg-secondary transition-colors"></span><div class="space-y-2"><div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1"><h3 class="font-headline-md text-headline-md text-primary font-medium">B.S. in Computer Science</h3><span class="font-label-code text-label-code text-secondary font-medium">Expected June 2025</span></div><div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md"><span class="">University of Washington</span><span class="">•</span><span class="text-primary font-label-code text-label-code bg-surface-container-high px-2 py-0.5 rounded">GPA: 3.9 / 4.0</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed pt-1">Focus on Operating Systems and Distributed Infrastructure. Relevant Coursework: Distributed Systems (CSE 452), Operating Systems Internals (CSE 451), Database Systems (CSE 444), Algorithm Design &amp; Analysis.</p></div></div><div class="relative group"><span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-surface-container border-2 border-outline-variant group-hover:border-secondary transition-colors"></span><div class="space-y-2"><div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1"><h3 class="font-headline-md text-headline-md text-primary font-medium">Undergraduate Research Assistant</h3><span class="font-label-code text-label-code text-outline">Sept 2023 — Present</span></div><div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md"><span class="">Systems &amp; Networking Lab</span><span class="">•</span><span class="text-on-surface-variant font-label-code text-label-code">Seattle, WA</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed pt-1">Investigating consensus validation latencies across non-volatile memory (NVM) architectures. Benchmarked cache-coherent read/write amplification patterns and implemented synthetic workloads in Rust/C.</p></div></div><div class="relative group"><span class="absolute -left-[31px] top-1.5 w-3.5 h-3.5 rounded-full bg-surface-container border-2 border-outline-variant group-hover:border-secondary transition-colors"></span><div class="space-y-2"><div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1"><h3 class="font-headline-md text-headline-md text-primary font-medium">Software Engineering Fellow</h3><span class="font-label-code text-label-code text-outline">Summer 2023</span></div><div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md"><span class="">Open Source Collective</span><span class="">•</span><span class="text-on-surface-variant font-label-code text-label-code">Remote</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-3xl leading-relaxed pt-1">Contributed core patches to popular CLI packaging utilities. Optimized AST parse times by 22% using incremental streaming parser pipelines in Go.</p></div></div></div></section><section class="py-12 space-y-8" id="stack">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code text-secondary tracking-widest uppercase">// TOOLKIT</span>
+<span class="h-px w-8 bg-outline-variant/60"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">Technical Stack &amp; Expertise</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Deliberate tooling refined across distributed microservices, low-level binaries, and interfaces.</p>
+</div>
+<!-- 4 Bento Category Blocks -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Card 1: Languages -->
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col justify-between space-y-4"><div class="flex items-center justify-between"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px]">code_blocks</span><h3 class="font-headline-md text-headline-md text-primary font-medium">Languages</h3></div><span class="font-label-code text-[11px] text-outline">Primary Focus</span></div><div class="flex flex-wrap gap-2 pt-1"><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Rust</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Go</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>TypeScript</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">C++20</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Python</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">SQL</span></div></div>
+<!-- Card 2: Systems & Backend -->
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col justify-between space-y-4"><div class="flex items-center justify-between"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px]">dns</span><h3 class="font-headline-md text-headline-md text-primary font-medium">Systems &amp; Backend</h3></div><span class="font-label-code text-[11px] text-outline">High-Throughput</span></div><div class="flex flex-wrap gap-2 pt-1"><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Distributed Systems</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Docker &amp; K8s</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">gRPC / Protobuf</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Redis Cluster</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Apache Kafka</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">PostgreSQL</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Linux Internals</span></div></div>
+<!-- Card 3: Web & Frontend -->
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col justify-between space-y-4"><div class="flex items-center justify-between"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px]">web</span><h3 class="font-headline-md text-headline-md text-primary font-medium">Web &amp; Frontend</h3></div><span class="font-label-code text-[11px] text-outline">Interactive UI</span></div><div class="flex flex-wrap gap-2 pt-1"><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Next.js 14 / React</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Three.js / WebGL</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Tailwind CSS</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">shadcn/ui</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">WebSockets</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">GraphQL</span></div></div>
+<!-- Card 4: Tools & Workflow -->
+<div class="p-space-lg rounded-xl bg-surface-container-low border border-outline-variant/40 flex flex-col justify-between space-y-4"><div class="flex items-center justify-between"><div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-secondary text-[20px]">terminal</span><h3 class="font-headline-md text-headline-md text-primary font-medium">Tools &amp; Workflow</h3></div><span class="font-label-code text-[11px] text-outline">DevOps &amp; Infra</span></div><div class="flex flex-wrap gap-2 pt-1"><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Git / CLI</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-secondary/40 font-label-code text-label-code text-on-surface flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>GitHub Actions (CI/CD)</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Neovim (Lua)</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">AWS (ECS, S3, IAM)</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Terraform</span><span class="px-3 py-1.5 rounded-md bg-surface-container border border-outline-variant/30 font-label-code text-label-code text-on-surface flex items-center gap-1.5">Prometheus</span></div></div>
+</div>
+</section><section class="py-12 space-y-8" id="projects">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code text-secondary tracking-widest uppercase">// SELECTED_WORK</span>
+<span class="h-px w-8 bg-outline-variant/60"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">Crafted with precision</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Core systems, low-latency brokers, and graphic engines built from first principles.</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-code text-label-code">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="">All repositories public</span>
+</div>
+</div>
+<!-- 2x2 Bento Architecture Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Project 1: HyperStream -->
+<div class="group flex flex-col rounded-xl bg-surface-container-low border border-outline-variant/50 hover:border-outline transition-all duration-200 overflow-hidden shadow-sm h-full">
+<!-- Visual Architecture Mockup -->
+<div class="h-52 bg-surface-container-lowest p-space-md flex flex-col justify-between border-b border-outline-variant/30 relative overflow-hidden">
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="font-label-code text-[11px] text-outline ml-2">hyperstream::broker::v2</span>
+</div>
+<span class="font-label-code text-[11px] text-secondary bg-secondary/10 px-2 py-0.5 rounded">0.42ms p99</span>
+</div>
+<!-- Topology Diagram Preview -->
+<div class="my-auto py-2 z-10">
+<div class="grid grid-cols-3 gap-2 text-center font-label-code text-[11px]">
+<div class="p-2 rounded bg-surface-container border border-outline-variant/40 text-on-surface">
+<span class="text-outline block text-[10px]">INGRESS</span>
+                100k Conns
+              </div>
+<div class="p-2 rounded bg-secondary-container/20 border border-secondary/40 text-secondary">
+<span class="text-secondary/70 block text-[10px]">SHUFFLE</span>
+                Raft Consensus
+              </div>
+<div class="p-2 rounded bg-surface-container border border-outline-variant/40 text-on-surface">
+<span class="text-outline block text-[10px]">EGRESS</span>
+                Sub-ms Fanout
+              </div>
+</div>
+</div>
+<!-- Micro Terminal Output line -->
+<div class="flex items-center justify-between font-label-code text-[11px] text-on-surface-variant/70 border-t border-outline-variant/20 pt-2 z-10">
+<span class="">&gt; hyperstream --nodes=12 --buffer=2GB</span>
+<span class="text-secondary">HEALTHY</span>
+</div>
+<div class="absolute -right-8 -bottom-8 w-36 h-36 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+</div>
+<!-- Project Content -->
+<div class="p-space-lg flex flex-col flex-1 justify-between space-y-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary font-semibold group-hover:text-secondary transition-colors">HyperStream</h3>
+<div class="flex items-center gap-1">
+<a aria-label="GitHub Repository" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</a>
+<a aria-label="Live Demo" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Real-time distributed event broker written in Go. Engineered to bridge real-time socket connections with Kafka partitions, cutting end-to-end telemetry propagation to under 1ms for 100,000 parallel clients.
+            </p>
+</div>
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-2 font-label-code text-label-code text-outline">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span class="">LSM buffer compaction, zero-copy buffer pool</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Go</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Kafka</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Redis</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">WebSockets</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Docker</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 2: AuraDB -->
+<div class="group flex flex-col rounded-xl bg-surface-container-low border border-outline-variant/50 hover:border-outline transition-all duration-200 overflow-hidden shadow-sm h-full">
+<!-- Visual Stats Engine Mockup -->
+<div class="h-52 bg-surface-container-lowest p-space-md flex flex-col justify-between border-b border-outline-variant/30 relative overflow-hidden">
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-variant"></span>
+<span class="font-label-code text-[11px] text-outline ml-2">auradb::engine::stats</span>
+</div>
+<span class="font-label-code text-[11px] text-primary-fixed bg-surface-container-high px-2 py-0.5 rounded border border-outline-variant/40">Rust 2024</span>
+</div>
+<!-- Live Key-Value Telemetry Bars -->
+<div class="space-y-2 my-auto z-10">
+<div class="space-y-1">
+<div class="flex justify-between font-label-code text-[10px] text-outline">
+<span class="">MEMTABLE SIZE (SSTable Spill at 64MB)</span>
+<span class="text-primary font-mono">48.2 MB / 64 MB</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between font-label-code text-[10px] text-outline">
+<span class="">BLOOM FILTER FP RATE</span>
+<span class="text-primary font-mono">0.0084%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary/80 rounded-full" style="width: 18%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between font-label-code text-[11px] text-on-surface-variant/70 border-t border-outline-variant/20 pt-2 z-10">
+<span class="">&gt; auradb-bench --ops=10M</span>
+<span class="text-secondary font-mono">842,190 ops/sec</span>
+</div>
+<div class="absolute -right-8 -bottom-8 w-36 h-36 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+</div>
+<!-- Content -->
+<div class="p-space-lg flex flex-col flex-1 justify-between space-y-4">
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md text-primary font-semibold group-hover:text-secondary transition-colors">AuraDB</h3>
+<div class="flex items-center gap-1">
+<a aria-label="GitHub Repository" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</a>
+<a aria-label="Documentation" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</a>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Embedded Key-Value storage engine built with Rust based on Log-Structured Merge-trees (LSM). Features multi-level SSTable compaction, WAL persistence, and zero-allocation binary deserialization.
+            </p>
+</div>
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-2 font-label-code text-label-code text-outline">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+<span class="">Custom tiered compaction &amp; Raft leader-election</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Rust</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Raft</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">gRPC</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Protobuf</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high border border-outline-variant/40 font-label-code text-label-code text-on-surface">Linux</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Project 3: VoxelCraft Engine -->
+
+<!-- Project 4: DevPulse -->
+
+</div>
+</section>
+<!-- EDUCATION & EXPERIENCE TIMELINE -->
+
+<!-- MINIMALIST CONTACT CTA -->
+<section class="pt-8 pb-16" id="contact">
+<div class="relative rounded-2xl bg-gradient-to-b from-surface-container-high/60 via-surface-container-low/90 to-surface-container-lowest border border-outline-variant/50 p-8 lg:p-12 text-center overflow-hidden shadow-xl">
+<!-- Glow effect -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-48 bg-secondary/10 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant font-label-code text-label-code">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="">Open to 2025 Grad &amp; Internship Roles</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight lg:text-[36px] lg:leading-[42px]">
+          Let’s build something extraordinary together
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+          Currently seeking software engineering full-time and internship opportunities. Whether discussing distributed storage, kernel tracing, or project collaborations, my inbox is always open.
+        </p>
+<!-- Interactive Action Bar -->
+<div class="flex flex-wrap items-center justify-center gap-space-sm pt-2">
+<!-- Copy Email Button with micro-interaction -->
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-medium hover:bg-surface-tint transition-all shadow-sm" id="copyEmailBtn" onclick="copyEmail()">
+<span class="material-symbols-outlined text-[18px]" id="copyIcon">content_copy</span>
+<span id="copyText" class="">alex.lin.dev@gmail.com</span>
+</button>
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface font-body-md text-body-md font-medium hover:bg-surface-variant hover:text-primary transition-all" href="mailto:alex.lin.dev@gmail.com">
+<span class="material-symbols-outlined text-[18px] text-secondary">calendar_today</span>
+<span class="">Schedule a 15-min Chat</span>
+</a>
+</div>
+<!-- Social Handles Row -->
+<div class="flex items-center justify-center gap-space-md pt-4">
+<a class="inline-flex items-center gap-1.5 font-label-code text-label-code text-on-surface-variant hover:text-primary transition-colors" href="https://github.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">code</span>
+<span class="">github.com/alexlin-dev</span>
+</a>
+<span class="text-outline font-label-code text-label-code">•</span>
+<a class="inline-flex items-center gap-1.5 font-label-code text-label-code text-on-surface-variant hover:text-primary transition-colors" href="https://linkedin.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">share</span>
+<span class="">linkedin.com/in/alexlindev</span>
+</a>
+<span class="text-outline font-label-code text-label-code hidden sm:inline">•</span>
+<a class="hidden sm:inline-flex items-center gap-1.5 font-label-code text-label-code text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span class="">@alexlindev</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Client-side script for copy-to-clipboard -->
+<script>
+    function copyEmail() {
+      const email = 'alex.lin.dev@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const copyText = document.getElementById('copyText');
+        const copyIcon = document.getElementById('copyIcon');
+        const originalText = copyText.innerText;
+
+        copyText.innerText = 'Email Copied!';
+        copyIcon.innerText = 'check';
+
+        setTimeout(() => {
+          copyText.innerText = originalText;
+          copyIcon.innerText = 'content_copy';
+        }, 2000);
+      });
+    }
+  </script>
+</div></div></main><footer class="relative z-10 w-full bg-surface-container-lowest border-t border-outline-variant/40 py-space-xl"><div class="max-w-5xl mx-auto px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex flex-col gap-1 items-center md:items-start text-center md:text-left"><div class="flex items-center gap-space-xs"><span class="font-label-code text-label-code text-primary font-medium">alexlin.dev</span><span class="font-label-code text-label-code text-outline">—</span><span class="font-label-code text-label-code text-secondary">available for Q3/Q4</span></div><p class="font-body-md text-body-md text-on-surface-variant">© 2024 Alex Lin. Designed with architectural restraint.</p></div><div class="flex items-center gap-space-md"><a class="font-label-code text-label-code text-on-surface-variant hover:text-primary transition-colors" data-path="projects" href="#">all-projects</a><a class="font-label-code text-label-code text-on-surface-variant hover:text-primary transition-colors" data-path="stack" href="#">environment</a><a class="font-label-code text-label-code text-on-surface-variant hover:text-primary transition-colors" data-path="contact" href="#">pgp-key</a></div></div></footer>
+
+
+
+
+
+</body></html>
