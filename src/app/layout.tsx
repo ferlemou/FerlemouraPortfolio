@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, JetBrains_Mono, Newsreader } from "next/font/google";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import { portfolioData } from "@/data/portfolio";
 import "./globals.css";
 
@@ -12,13 +12,6 @@ const geistSans = Geist({
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const newsreader = Newsreader({
-  variable: "--font-serif",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -35,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${jetbrainsMono.variable} ${newsreader.variable} dark scroll-smooth`}
+      className={`${geistSans.variable} ${jetbrainsMono.variable} dark scroll-smooth`}
     >
       <body className="min-h-screen bg-[#09090b] text-[#e5e1e4] font-sans antialiased selection:bg-emerald-500/20 selection:text-emerald-300">
         {children}

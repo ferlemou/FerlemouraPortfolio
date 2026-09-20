@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Copy, Check, Calendar, Terminal } from "lucide-react";
+import { Copy, Check, Calendar } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/portfolio/icons";
 import { portfolioData } from "@/data/portfolio";
 
@@ -33,7 +33,7 @@ export function Contact() {
           </div>
 
           {/* Headline */}
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-zinc-100 font-normal tracking-tight">
+          <h2 className="font-sans text-2xl sm:text-3xl lg:text-4xl text-zinc-100 font-semibold tracking-tight">
             {contact.title}
           </h2>
 
@@ -83,7 +83,7 @@ export function Contact() {
               <GithubIcon className="w-3.5 h-3.5" />
               <span>{socials.github.label}</span>
             </a>
-            <span className="text-zinc-600 hidden sm:inline">•</span>
+            <span className="text-zinc-600">•</span>
             <a
               href={socials.linkedin.url}
               target="_blank"
@@ -92,16 +92,6 @@ export function Contact() {
             >
               <LinkedinIcon className="w-3.5 h-3.5" />
               <span>{socials.linkedin.label}</span>
-            </a>
-            <span className="text-zinc-600 hidden sm:inline">•</span>
-            <a
-              href={socials.twitter.url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-1.5 hover:text-zinc-100 transition-colors"
-            >
-              <Terminal className="w-3.5 h-3.5 text-[#10b981]" />
-              <span>{socials.twitter.label}</span>
             </a>
           </div>
         </div>

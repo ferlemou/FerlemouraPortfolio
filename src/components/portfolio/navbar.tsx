@@ -88,14 +88,6 @@ export function Navbar() {
             <LinkedinIcon className="w-4 h-4" />
           </a>
 
-          <a
-            href={personal.resumeUrl}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#201f22] border border-[#27272a] hover:border-[#8e9192]/60 text-zinc-200 text-xs font-medium transition-all hover:text-white"
-          >
-            <FileText className="w-3.5 h-3.5 text-[#10b981]" />
-            <span>{personal.resumeLabel}</span>
-          </a>
-
           {/* Mobile Drawer Trigger */}
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -146,6 +138,8 @@ export function Navbar() {
                 <div className="pt-6 border-t border-[#27272a] flex flex-col gap-3">
                   <a
                     href={personal.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-[#201f22] border border-[#27272a] text-zinc-200 text-xs font-medium hover:bg-[#27272a] transition-colors"
                   >
                     <FileText className="w-4 h-4 text-[#10b981]" />

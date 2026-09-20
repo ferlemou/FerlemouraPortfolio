@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import {
-  ArrowDown,
+  FileText,
   Mail,
   Terminal,
   Copy,
@@ -69,7 +69,7 @@ export function Hero() {
 
       {/* Headline & Subtext */}
       <div className="space-y-4 max-w-4xl">
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] lg:leading-[1.1] text-zinc-100 font-normal tracking-tight">
+        <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-zinc-100 font-semibold tracking-tight leading-tight lg:leading-[1.1]">
           {hero.headlinePrefix}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-400 to-[#10b981]">
             {hero.headlineHighlight}
@@ -83,11 +83,13 @@ export function Hero() {
       {/* Action Row */}
       <div className="flex flex-wrap items-center gap-3 pt-2">
         <a
-          href="#projects"
+          href={hero.primaryCtaHref || "/curriculo.pdf"}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-white text-zinc-950 font-sans text-sm font-medium hover:bg-zinc-200 transition-all shadow-sm group"
         >
+          <FileText className="w-4 h-4 text-zinc-950 transition-transform group-hover:scale-105" />
           <span>{hero.primaryCta}</span>
-          <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-0.5" />
         </a>
 
         <a

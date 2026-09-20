@@ -31,7 +31,7 @@ export function TechStack() {
           </span>
           <span className="h-px w-8 bg-[#27272a]" />
         </div>
-        <h2 className="font-serif text-2xl sm:text-3xl text-zinc-100 font-normal tracking-tight">
+        <h2 className="font-sans text-2xl sm:text-3xl text-zinc-100 font-semibold tracking-tight">
           {techStack.title}
         </h2>
         <p className="font-sans text-sm sm:text-base text-zinc-400">

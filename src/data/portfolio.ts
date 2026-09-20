@@ -52,16 +52,21 @@ export interface ProjectItem {
   title: string;
   tag: string;
   badge: string;
+  versionBadge: string;
+  image: string;
   description: string;
   tuneNote: string;
-  terminalCommand: string;
-  statusText: string;
-  type: "topology" | "gauge";
+  terminalCommand?: string;
+  statusText?: string;
+  type?: "topology" | "gauge" | "image";
   topology?: ProjectTopologyItem[];
   gauges?: ProjectGaugeItem[];
   techStack: string[];
   githubUrl: string;
   liveUrl?: string;
+  codeUrl?: string;
+  demoUrl?: string;
+  itchUrl?: string;
 }
 
 export interface SocialLink {
@@ -95,6 +100,8 @@ export interface PortfolioData {
     headlineHighlight: string;
     subtext: string;
     primaryCta: string;
+    primaryCtaHref: string;
+    primaryCtaTarget: string;
     secondaryCta: string;
     copiedFeedback: string;
     metrics: HeroMetric[];
@@ -134,7 +141,6 @@ export interface PortfolioData {
   socials: {
     github: SocialLink;
     linkedin: SocialLink;
-    twitter: SocialLink;
   };
   footer: {
     site: string;
@@ -161,8 +167,8 @@ export const portfolioData: PortfolioData = {
       beaconText: "Estudante de CC / Buscando Estágio",
     },
     curlCommand: "curl -sL felipemoura.dev/cv",
-    email: "felipemoura.dev@gmail.com",
-    resumeUrl: "#",
+    email: "ferlemoura@outlook.com",
+    resumeUrl: "/curriculo.pdf",
     resumeLabel: "Currículo",
     mobileResumeLabel: "Baixar Currículo",
   },
@@ -171,7 +177,9 @@ export const portfolioData: PortfolioData = {
     headlineHighlight: "arquitetura distribuída.",
     subtext:
       "Estudante de Ciência da Computação focado em serviços backend, aplicações em tempo real e boas práticas de engenharia de software.",
-    primaryCta: "Ver Projetos",
+    primaryCta: "Currículo",
+    primaryCtaHref: "/curriculo.pdf",
+    primaryCtaTarget: "_blank",
     secondaryCta: "Entrar em Contato",
     copiedFeedback: "Copiado",
     metrics: [
@@ -313,52 +321,24 @@ export const portfolioData: PortfolioData = {
     repoStatus: "Repositórios públicos",
     items: [
       {
-        id: "hyperstream",
-        title: "HyperStream",
-        tag: "hyperstream::broker::v2",
-        badge: "0.42ms p99",
+        id: "rico-atraves-do-tempo",
+        title: "Rico Através do Tempo",
+        tag: "aphronesia::game::rico",
+        badge: "Unity 2022.3.62f3",
+        versionBadge: "Unity 2022.3.62f3",
+        image: "/projects/rico-atraves-do-tempo.webp",
         description:
-          "Broker de eventos distribuído em tempo real desenvolvido em Go. Projetado para integrar conexões de sockets com partições Kafka, reduzindo a propagação de telemetria para menos de 1ms com 100.000 clientes paralelos.",
-        tuneNote: "Compactação LSM de buffers, pool de memória zero-copy",
-        terminalCommand: "hyperstream --nodes=12 --buffer=2GB",
-        statusText: "HEALTHY",
-        type: "topology",
-        topology: [
-          { label: "INGRESS", value: "100k Conns", highlight: false },
-          { label: "SHUFFLE", value: "Raft Consensus", highlight: true },
-          { label: "EGRESS", value: "Sub-ms Fanout", highlight: false },
-        ],
-        techStack: ["Go", "Kafka", "Redis", "WebSockets", "Docker"],
-        githubUrl: "https://github.com/ferlemou/hyperstream",
-        liveUrl: "#",
-      },
-      {
-        id: "auradb",
-        title: "AuraDB",
-        tag: "auradb::engine::stats",
-        badge: "Rust 2024",
-        description:
-          "Mecanismo de armazenamento chave-valor embarcado desenvolvido em Rust baseado em Log-Structured Merge-trees (LSM). Conta com compactação SSTable multinível, persistência WAL e desserialização binária zero-allocation.",
-        tuneNote: "Compactação tiered personalizada & eleição de líder Raft",
-        terminalCommand: "auradb-bench --ops=10M",
-        statusText: "842,190 ops/sec",
-        type: "gauge",
-        gauges: [
-          {
-            label: "MEMTABLE SIZE (SSTable Spill at 64MB)",
-            value: "48.2 MB / 64 MB",
-            percentage: 75,
-          },
-          {
-            label: "BLOOM FILTER FP RATE",
-            value: "0.0084%",
-            percentage: 18,
-            badge: "TieredCompaction",
-          },
-        ],
-        techStack: ["Rust", "Raft", "gRPC", "Protobuf", "Linux"],
-        githubUrl: "https://github.com/ferlemou/auradb",
-        liveUrl: "#",
+          "Jogo de aventura e ação 2D multigênero desenvolvido colaborativamente como TCC pela equipe Aphronesia. Implementa mecânicas dinâmicas de dilatação temporal (Time.timeScale), física 2D com desativação seletiva de colisões, arquitetura orientada a eventos para desacoplamento de HUD/áudio e motor rítmico data-driven serializado via JSON.",
+        tuneNote: "State machine em chefes, eventos desacoplados & save system em JSON",
+        terminalCommand: "unity --projectPath ./RicoGame -version 2022.3.62f3",
+        statusText: "SHIPPED",
+        type: "image",
+        techStack: ["Unity", "C#", "Game Development", "POO", "JSON", "Git"],
+        githubUrl: "https://github.com/Aphronesia/RicoAtravesdoTempo",
+        liveUrl: "https://ferlemou.itch.io/atravesdotempo",
+        codeUrl: "https://github.com/Aphronesia/RicoAtravesdoTempo",
+        demoUrl: "https://ferlemou.itch.io/atravesdotempo",
+        itchUrl: "https://ferlemou.itch.io/atravesdotempo",
       },
     ],
   },
@@ -367,8 +347,8 @@ export const portfolioData: PortfolioData = {
     title: "Vamos construir algo extraordinário juntos",
     description:
       "Atualmente busco oportunidades de estágio em desenvolvimento de software e sistemas backend. Entre em contato ou conecte-se pelas redes.",
-    email: "felipemoura.dev@gmail.com",
-    calendarUrl: "mailto:felipemoura.dev@gmail.com",
+    email: "ferlemoura@outlook.com",
+    calendarUrl: "mailto:ferlemoura@outlook.com",
     calendarText: "Agendar Conversa",
     copyFeedback: "E-mail copiado!",
     socialsHeading: "Redes e Links",
@@ -380,14 +360,9 @@ export const portfolioData: PortfolioData = {
       url: "https://github.com/ferlemou",
     },
     linkedin: {
-      label: "linkedin.com/in/ferlemou",
-      handle: "ferlemou",
-      url: "https://linkedin.com/in/ferlemou",
-    },
-    twitter: {
-      label: "@ferlemou",
-      handle: "@ferlemou",
-      url: "https://x.com/ferlemou",
+      label: "linkedin.com/in/ferlemoura",
+      handle: "ferlemoura",
+      url: "https://linkedin.com/in/ferlemoura",
     },
   },
   footer: {
