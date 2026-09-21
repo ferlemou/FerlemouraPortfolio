@@ -1,62 +1,85 @@
 import { NextRequest, NextResponse } from "next/server";
+import { portfolioData } from "@/data/portfolio";
 
-const ASCII_CV = `================================================================================
+function getAsciiCv(): string {
+  const { personal, socials, education, techStack, projects } = portfolioData;
+
+  const mackenzie = education.milestones.find((m) => m.id === "mackenzie");
+  const fieb = education.milestones.find((m) => m.id === "fieb");
+  const featured = projects.items[0];
+
+  const languages =
+    techStack.categories.find((c) => c.id === "languages")?.skills.map((s) => s.name).join(", ") ||
+    "C#, TypeScript, JavaScript, Python, SQL, HTML5, CSS3";
+
+  const fullstack =
+    techStack.categories.find((c) => c.id === "fullstack")?.skills.map((s) => s.name).join(", ") ||
+    "POO, C# / .NET, TypeScript & Next.js, React, APIs REST";
+
+  const gameDev =
+    techStack.categories.find((c) => c.id === "game-dev")?.skills.map((s) => s.name).join(", ") ||
+    "Unity (2022.3 LTS), Godot 4, C# Scripting, FSM, POE";
+
+  return `================================================================================
 FELIPE ROBERTO DE MOURA
-Software Engineering Intern | Computer Science Undergraduate
+Estágio em Engenharia de Software | Sistemas Backend
 ================================================================================
-Email:     ferlemoura@outlook.com
-GitHub:    https://github.com/ferlemou
-LinkedIn:  https://linkedin.com/in/ferlemoura
-Portfolio: https://ferlemoura.vercel.app
+E-mail:    ${personal.email}
+GitHub:    ${socials.github.url}
+LinkedIn:  ${socials.linkedin.url}
+Portfolio: https://${portfolioData.footer.site}
 
 --------------------------------------------------------------------------------
-PROFILE SUMMARY
+RESUMO PROFISSIONAL
 --------------------------------------------------------------------------------
-Computer Science undergraduate student with strong foundations in software
-engineering, clean architecture, and systems development. Experienced in C#,
-Unity game engine architecture, TypeScript, and modern web systems.
+Estudante de Ciência da Computação com bases sólidas em engenharia de software,
+arquitetura limpa e programação de sistemas. Experiência prática em C#,
+arquitetura na engine Unity, TypeScript, Next.js e desenvolvimento de aplicações
+interativas e modulares.
 
 --------------------------------------------------------------------------------
-EDUCATION
+FORMAÇÃO ACADÊMICA
 --------------------------------------------------------------------------------
-B.S. in Computer Science                                           Expected 2030
-Universidade Presbiteriana Mackenzie (Night Shift)               In Progress
+${mackenzie?.degree || "Bacharelado em Ciência da Computação"}
+${mackenzie?.institution || "Universidade Presbiteriana Mackenzie"} (${mackenzie?.period || "Previsão: 2030 (Noturno)"})
+Status: ${mackenzie?.badge || "Em andamento"} - ${mackenzie?.location || "Alphaville, SP"}
 
-Technical Degree in Digital Game Development                                2025
-FIEB (Fundacao Instituto de Educacao de Barueri)                       Completed
-
---------------------------------------------------------------------------------
-TECHNICAL SKILLS
---------------------------------------------------------------------------------
-Languages:       C#, TypeScript, JavaScript, Python, C++
-Frameworks:      Next.js, React, Node.js, Tailwind CSS
-Game Engine:     Unity (2022.3 LTS), URP 2D, Component-Based Architecture
-Patterns & Arch: Observer Pattern, Finite State Machines (FSM), Singleton,
-                 Interface Segregation, Event-Driven Architecture, REST APIs
-Tools & DevOps:  Git, GitHub, Docker, Linux (Bash/CLI), Neovim, Vercel
+${fieb?.degree || "Técnico em Desenvolvimento de Jogos Digitais"}
+${fieb?.institution || "FIEB — Fundação Instituto de Educação de Barueri"} (${fieb?.period || "Concluído em 2025"})
+Status: ${fieb?.badge || "Curso Técnico"} - ${fieb?.location || "Barueri, SP"}
 
 --------------------------------------------------------------------------------
-FEATURED PROJECT
+COMPETÊNCIAS TÉCNICAS
 --------------------------------------------------------------------------------
-Rico: Atraves do Tempo (Unity 2022.3.62f3 LTS, C#)
-Role: Lead Programmer | Team: Aphronesia
-Repo: https://github.com/Aphronesia/RicoAtravesdoTempo
-Play: https://ferlemou.itch.io/atravesdotempo
+Linguagens:              ${languages}
+Arquitetura & Fullstack: ${fullstack}
+Game Development:        ${gameDev}
+Ferramentas & Workflow:  Git, GitHub, Linux / CLI, JetBrains Rider, VS Code,
+                         Bash / Shell, Terminal, Vercel
 
-Multi-genre 2D adventure game developed as a Capstone Project (TCC) at FIEB.
-Engineered core gameplay loops, time dilation mechanics (Time.timeScale), 2D
-physics collision management, boss fight FSM (Attacking -> Tired -> Damaged ->
-Die), JSON data-driven rhythm engine (RitmoJson), and persistent Save/Load
-system via Application.persistentDataPath.
+--------------------------------------------------------------------------------
+PROJETO EM DESTAQUE
+--------------------------------------------------------------------------------
+${featured?.title || "Através do Tempo"} (${featured?.versionBadge || "Unity 2022.3.62f3"}, C#)
+Função: Programador Principal | Equipe: Aphronesia
+Repositório:  ${featured?.codeUrl || "https://github.com/Aphronesia/RicoAtravesdoTempo"}
+Jogar Online: ${featured?.itchUrl || "https://ferlemou.itch.io/atravesdotempo"}
+
+Jogo 2D multigênero desenvolvido como Trabalho de Conclusão de Curso (TCC)
+na FIEB. Implementação de arquitetura desacoplada utilizando Observer Pattern
+com eventos (Action) para HUD e áudio, máquinas de estados finitos (FSM)
+para chefes, dilatação temporal (Time.timeScale), motor rítmico data-driven
+via arquivos JSON (RitmoJson.cs) e persistência via persistentDataPath.
 ================================================================================
 `;
+}
 
 export async function GET(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || "";
   const isCli = /curl|wget|httpie/i.test(userAgent);
 
   if (isCli) {
-    return new NextResponse(ASCII_CV, {
+    return new NextResponse(getAsciiCv(), {
       status: 200,
       headers: {
         "Content-Type": "text/plain; charset=utf-8",

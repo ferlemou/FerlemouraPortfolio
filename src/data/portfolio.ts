@@ -166,7 +166,7 @@ export const portfolioData: PortfolioData = {
       role: "Ciência da Computação",
       beaconText: "Estudante de CC / Buscando Estágio",
     },
-    curlCommand: "curl -sL felipemoura.dev/cv",
+    curlCommand: "curl -sL ferlemoura.vercel.app/cv",
     email: "ferlemoura@outlook.com",
     resumeUrl: "/curriculo.pdf",
     resumeLabel: "Currículo",
@@ -176,7 +176,7 @@ export const portfolioData: PortfolioData = {
     headlinePrefix: "Ferle Moura | Engenharia de Software & ",
     headlineHighlight: "Sistemas Backend.",
     subtext:
-      "Estudante de Ciência da Computação com raízes no desenvolvimento de jogos. Desenvolvo aplicações interativas e soluções modulares. Com conhecimentos em Unity (C#), TypeScript e Next.js.",
+      "Estudante de Ciência da Computação com raízes na programação de jogos digitais. Desenvolvo aplicações interativas e soluções modulares. Com conhecimentos em Unity (C#), TypeScript e Next.js.",
     primaryCta: "Currículo",
     primaryCtaHref: "/curriculo.pdf",
     primaryCtaTarget: "_blank",
@@ -369,7 +369,7 @@ export const portfolioData: PortfolioData = {
     },
   },
   footer: {
-    site: "felipemoura.dev",
+    site: "ferlemoura.vercel.app",
     availability: "aberto a oportunidades de estágio",
     copyright: "© 2026 Felipe Moura. Desenvolvido com foco e simplicidade.",
     links: [
