@@ -1,28 +1,28 @@
 # FerlemouraPortfolio
 
-Modern developer portfolio and personal systems showcase built with Next.js App Router, TypeScript, and Tailwind CSS.
+Portfolio de engenharia de software e showcase de sistemas desenvolvido com Next.js App Router, TypeScript e Tailwind CSS.
 
-- Production: https://ferlemoura.vercel.app/
-- GitHub Repository: https://github.com/ferlemou/FerlemouraPortfolio
+- Produção: https://ferlemoura.vercel.app/
+- Repositório no GitHub: https://github.com/ferlemou/FerlemouraPortfolio
 
 ---
 
-## Architecture and Technical Highlights
+## Arquitetura e Destaques Técnicos
 
-### 1. CLI-First Route Handler (`src/app/cv/route.ts`)
+### 1. Route Handler CLI-First (`src/app/cv/route.ts`)
 
-The application implements a terminal-first Route Handler accessible at `/cv`. This endpoint performs runtime HTTP `User-Agent` header inspection to serve differential content according to client capabilities:
+A aplicação implementa um Route Handler acessível em `/cv`, projetado prioritariamente para o terminal. O endpoint realiza a inspeção em runtime do header HTTP `User-Agent` para entregar conteúdo diferenciado conforme o tipo de cliente:
 
-- Command-Line Clients (`curl`, `wget`, `httpie`): When the incoming `User-Agent` matches standard command-line HTTP clients, the handler returns an unbuffered, plain text mono-spaced ASCII curriculum vitae (`Content-Type: text/plain; charset=utf-8`) with cache directives (`max-age=3600`).
-- Web Browsers: Standard user agents that do not match the CLI pattern receive an HTTP 307 Temporary Redirect pointing directly to the static PDF document at `/curriculo.pdf`.
+- Clientes de linha de comando (`curl`, `wget`, `httpie`): Quando o `User-Agent` corresponde a utilitários CLI, a rota retorna um currículo em texto plano mono-spaced ASCII sem buffering (`Content-Type: text/plain; charset=utf-8`) com diretivas de cache (`max-age=3600`).
+- Navegadores Web: Requisições provenientes de browsers convencionais recebem um redirect HTTP 307 Temporary Redirect diretamente para o documento estático em `/curriculo.pdf`.
 
-Execution example via terminal:
+Exemplo de execução via terminal:
 
 ```bash
 curl -sL ferlemoura.vercel.app/cv
 ```
 
-Handler logic summary:
+Resumo da lógica do Route Handler:
 
 ```typescript
 export async function GET(request: NextRequest) {
@@ -44,149 +44,84 @@ export async function GET(request: NextRequest) {
 }
 ```
 
-### 2. Centralized Typed Configuration (`src/data/portfolio.ts`)
+### 2. Configuração Centralizada e Tipada (`src/data/portfolio.ts`)
 
-All portfolio content, engineering milestones, technical toolkits, and project metadata are decoupled from presentation components and consolidated in `src/data/portfolio.ts`.
+Todo o conteúdo do portfolio, marcos de trajetória, toolkit técnico e metadados de projetos estão desacoplados dos componentes de apresentação, centralizados em `src/data/portfolio.ts`.
 
-- Enforces strict TypeScript contracts through interfaces (`ProjectItem`, `PortfolioData`, `HeroMetric`, `MilestoneItem`).
-- Eliminates hardcoded inline strings across JSX components.
-- Guarantees compile-time validation for URLs, asset paths, and technical badges.
+- Estabelece contratos estritos em TypeScript por meio de interfaces (`ProjectItem`, `PortfolioData`, `HeroMetric`, `MilestoneItem`).
+- Elimina strings hardcoded inline nos componentes JSX.
+- Garante validação em tempo de compilação (build time) para URLs, caminhos de assets e badges técnicos.
 
-### 3. Rendering Pipeline and Performance
+### 3. Pipeline de Renderização e Performance
 
-- Static Site Generation (SSG): Core portfolio pages are compiled to static HTML and JSON manifests at build time using Next.js App Router and Turbopack.
-- Dynamic Route Isolation: The `/cv` route handler operates dynamically on demand (`server-rendered on demand`), while root and not-found routes remain static assets served via edge cache.
-- Typography Optimization: Pure Geist system loaded via `next/font/google` (`Geist` for sans-serif hierarchies and `JetBrains_Mono` for monospaced telemetry, shell commands, and code badges). Zero client-side font layout shifts (CLS).
-- Responsive Media: Project cards utilize Next.js `<Image />` with WebP formatting, responsive sizes, inner vignettes, and graceful fallback states upon loading failure.
+- Static Site Generation (SSG): As páginas principais são compiladas em HTML e manifests estáticos durante o build através do Next.js App Router e Turbopack.
+- Isolamento de Rotas Dinâmicas: O Route Handler `/cv` opera sob demanda (`server-rendered on demand`), enquanto a página inicial e a rota de fallback operam como assets estáticos servidos via edge cache.
+- Otimização Tipográfica: Sistema Pure Geist configurado com `next/font/google` (`Geist` para hierarquias sans-serif e `JetBrains_Mono` para telemetria, comandos de terminal e badges de código), eliminando layout shifts (CLS).
+- Assets Visuais e Mídia Responsiva: Os cards de projetos utilizam o componente Next.js `<Image />` com formato WebP, dimensionamento responsivo, vinheta interna e estado de fallback estruturado em caso de falha de carregamento.
 
 ---
 
-## Tech Stack
+## Stack Técnica
 
-| Layer | Technologies |
+| Camada | Tecnologias |
 | :--- | :--- |
 | Framework | Next.js 16 (App Router, Turbopack) |
-| Runtime and Language | Node.js 20+, TypeScript 5 (Strict Mode) |
-| UI and Styling | React 19, Tailwind CSS v4, Lucide React |
-| Component Primitives | Radix UI, shadcn/ui |
-| Hosting and Edge CDN | Vercel Platform |
-| CLI and Operating System | Linux, Bash, POSIX Utilities |
+| Runtime e Linguagem | Node.js 20+, TypeScript 5 (Strict Mode) |
+| UI e Estilização | React 19, Tailwind CSS v4, Lucide React |
+| Primitivos de Componentes | Radix UI, shadcn/ui |
+| Hospedagem e Edge CDN | Vercel Platform |
+| CLI e Sistema Operacional | Linux, Bash, Utilitários POSIX |
 
 ---
 
-## Project Directory Tree
+## Configuração e Ambiente Local
 
-```text
-FerlemouraPortfolio/
-|-- AGENTS.md
-|-- CLAUDE.md
-|-- README.md
-|-- components.json
-|-- eslint.config.mjs
-|-- next.config.ts
-|-- package.json
-|-- postcss.config.mjs
-|-- tsconfig.json
-|-- public/
-|   |-- curriculo.pdf
-|   `-- projects/
-|       |-- project-1.webp
-|       |-- project-2.webp
-|       `-- rico-atraves-do-tempo.webp
-|-- src/
-|   |-- app/
-|   |   |-- cv/
-|   |   |   `-- route.ts
-|   |   |-- favicon.ico
-|   |   |-- globals.css
-|   |   |-- layout.tsx
-|   |   `-- page.tsx
-|   |-- components/
-|   |   |-- portfolio/
-|   |   |   |-- contact.tsx
-|   |   |   |-- education.tsx
-|   |   |   |-- footer.tsx
-|   |   |   |-- hero.tsx
-|   |   |   |-- icons.tsx
-|   |   |   |-- navbar.tsx
-|   |   |   |-- projects.tsx
-|   |   |   `-- tech-stack.tsx
-|   |   `-- ui/
-|   |       |-- badge.tsx
-|   |       |-- button.tsx
-|   |       |-- card.tsx
-|   |       |-- separator.tsx
-|   |       `-- sheet.tsx
-|   |-- data/
-|   |   `-- portfolio.ts
-|   `-- lib/
-|       `-- utils.ts
-`-- stitch/
-    |-- DESIGN.MD
-    |-- raw-webmobile.html
-    `-- raw-webpc.html
-```
-
----
-
-## Local Development Setup
-
-### Prerequisites
-- Node.js 20.x or higher
-- npm 10.x or higher
+### Pré-requisitos
+- Node.js 20.x ou superior
+- npm 10.x ou superior
 - Git
 
-### Installation and Execution
+### Instalação e Execução
 
-1. Clone the repository:
+1. Clonar o repositório:
    ```bash
    git clone https://github.com/ferlemou/FerlemouraPortfolio.git
    cd FerlemouraPortfolio
    ```
 
-2. Install project dependencies:
+2. Instalar as dependências do projeto:
    ```bash
    npm install
    ```
 
-3. Start the local development server:
+3. Iniciar o servidor de desenvolvimento:
    ```bash
    npm run dev
    ```
-   The local application will be accessible at `http://localhost:3000`.
+   A aplicação estará acessível em `http://localhost:3000`.
 
-4. Execute code quality checks and static build verification:
+4. Executar checagens de qualidade e validação de build:
    ```bash
-   # Run ESLint validation
+   # Executar validação com ESLint
    npm run lint
 
-   # Execute Next.js production build
+   # Executar o build de produção do Next.js
    npm run build
    ```
 
 ---
 
-## Featured Project: Através do Tempo
+## Projeto em Destaque: Através do Tempo
 
-The portfolio highlights *Através do Tempo*, a multi-genre 2D digital game engineered as a Capstone Project (TCC) at FIEB by team Aphronesia:
+O portfolio destaca *Através do Tempo*, um jogo digital 2D multigênero desenvolvido como Trabalho de Conclusão de Curso (TCC) na FIEB pela equipe Aphronesia:
 
-- Technology: Unity 2022.3.62f3 LTS, C#, Universal Render Pipeline (URP 2D).
-- Engineering Role: Lead Programmer (Felipe Moura). Responsible for system architecture, physics collision logic, dynamic minigame mechanics, and data persistence.
-- Architectural Patterns:
-  - Observer Pattern: Utilizes `public static event Action` instances to decouple gameplay logic from HUD indicators and audio channels.
-  - Finite State Machine (FSM): Manages boss phases (`Attacking`, `Tired`, `Damaged`, `Die`) with deterministic transition windows.
-  - Data-Driven Rhythm Engine: Serializes rhythm map timings via JSON (`RitmoJson.cs`) with custom Unity Editor inspector extensions for level calibration.
-  - Persistence Pipeline: JSON serialization through `Application.persistentDataPath` storing world map coordinates and level completion states.
-- Project Links:
-  - Source Code: https://github.com/Aphronesia/RicoAtravesdoTempo
-  - Playable Version (Itch.io): https://ferlemou.itch.io/atravesdotempo
-
----
-
-## Author and Contact
-
-- Author: Felipe Roberto de Moura
-- Role: Software Engineering Intern | Computer Science Undergraduate (Universidade Presbiteriana Mackenzie)
-- GitHub: https://github.com/ferlemou
-- LinkedIn: https://linkedin.com/in/ferlemoura
-- Email: ferlemoura@outlook.com
+- Tecnologia: Unity 2022.3.62f3 LTS, C#, Universal Render Pipeline (URP 2D).
+- Papel de Engenharia: Programador Principal (Felipe Moura). Responsável pela arquitetura de software em C#, sistemas de física e colisões, mecânicas dinâmicas de todos os minigames e persistência de dados.
+- Padrões Arquiteturais:
+  - Observer Pattern: Utiliza instâncias de `public static event Action` para desacoplar a lógica de gameplay dos indicadores de HUD e canais de áudio.
+  - Finite State Machine (FSM): Gerencia as fases comportamentais do chefe (`Attacking`, `Tired`, `Damaged`, `Die`) com janelas determinísticas de transição e vulnerabilidade.
+  - Motor Rítmico Data-Driven: Mapeamento de tempos rítmicos serializado em arquivos JSON (`RitmoJson.cs`), integrado a extensões customizadas de inspector no Unity Editor para calibragem de faixas.
+  - Pipeline de Persistência: Serialização JSON via `Application.persistentDataPath`, persistindo coordenadas no mapa de fases e status de conclusão.
+- Links do Projeto:
+  - Código-Fonte: https://github.com/Aphronesia/RicoAtravesdoTempo
+  - Versão Jogável (Itch.io): https://ferlemou.itch.io/atravesdotempo
